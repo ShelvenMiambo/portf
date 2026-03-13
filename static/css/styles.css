@@ -643,26 +643,26 @@ body {
 .skill-icon-only {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 1rem;
-    border-radius: 12px;
+    padding: 1.25rem;
+    border-radius: 15px;
     text-align: center;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    aspect-ratio: 1 / 1;
 }
 
 .skill-icon-only:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.05);
     border-color: var(--primary-color);
     background: rgba(var(--primary-rgb), 0.05);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }
 
 .skill-icon-only i {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
 }
 
