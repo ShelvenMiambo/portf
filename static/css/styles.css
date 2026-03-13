@@ -621,84 +621,133 @@ body {
     width: 20px;
 }
 
-/* Skills Section (Restored Ranking Style) */
+/* Hybrid Skills Styling */
 #skills {
     background-color: var(--bg-light);
-    transition: background-color 0.3s ease;
 }
 
-.skill-category {
-    background-color: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    height: 100%;
-    transition: all 0.3s ease;
-}
-
-.skill-category h4 {
-    color: var(--text-primary) !important;
-    margin-bottom: 2rem;
-    font-weight: 700;
+.skills-wrapper {
     display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Development: Icon Grid (No Ranking) */
+.dev-skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 1.2rem;
+    width: 100%;
+}
+
+.skill-icon-only {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.skill-category h4 i {
-    font-size: 1.5rem;
+.skill-icon-only:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    background: rgba(var(--primary-rgb), 0.05);
 }
 
-.skill-item {
-    margin-bottom: 1.8rem;
+.skill-icon-only i {
+    font-size: 2rem;
+    color: var(--primary-color);
 }
 
-.skill-info {
+.skill-icon-only span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Systems: Bars (With Small Icons) */
+.system-skills-category {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.skill-bar-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-bar-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
 }
 
-.skill-name {
-    font-weight: 600;
-    color: var(--text-primary);
+.skill-bar-name {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.95rem;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
-.skill-name i {
-    font-size: 1rem; /* Ícones pequenos como solicitado */
+.skill-bar-name i {
+    font-size: 0.9rem;
     width: 20px;
     text-align: center;
     color: var(--primary-color);
 }
 
-.skill-level {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-weight: 500;
-}
-
-.skill-bar {
-    height: 6px; /* Mais fino e elegante */
-    background-color: var(--border-color);
+.skill-bar-container {
+    height: 6px;
+    background: var(--border-color);
     border-radius: 10px;
     overflow: hidden;
 }
 
-.skill-progress {
+.skill-bar-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     border-radius: 10px;
-    transition: width 1.5s cubic-bezier(0.1, 0.42, 0.41, 1);
+    transition: width 1.5s ease-out;
 }
 
-[data-theme="dark"] .skill-name { color: #f0f6fc !important; }
-[data-theme="dark"] .skill-category h4 { color: #ffffff !important; }
-[data-theme="dark"] .skill-bar { background-color: #21262d !important; }
+/* Specific Hover Colors */
+.skill-icon-only.java:hover i { color: #f89820; }
+.skill-icon-only.ts:hover i { color: #3178c6; }
+.skill-icon-only.python:hover i { color: #3776ab; }
+.skill-icon-only.magento:hover i { color: #ff671f; }
+.skill-icon-only.js:hover i { color: #f7df1e; }
+.skill-icon-only.html:hover i { color: #e34f26; }
+
+/* Dark Mode Professional Adjustments */
+[data-theme="dark"] .skill-icon-only {
+    background: #1c2128;
+    border-color: #30363d;
+}
+
+[data-theme="dark"] .system-skills-category {
+    background: #1c2128;
+    border-color: #30363d;
+}
+
+[data-theme="dark"] .skill-bar-container {
+    background: #2d333b;
+}
+
+[data-theme="dark"] #skills {
+    background-color: var(--bg-light) !important;
+}
 
 /* Projects Section */
 .project-card {
