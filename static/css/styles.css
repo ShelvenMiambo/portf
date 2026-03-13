@@ -729,6 +729,8 @@ body {
 .skill-icon-only.magento:hover i { color: #ff671f; }
 .skill-icon-only.js:hover i { color: #f7df1e; }
 .skill-icon-only.html:hover i { color: #e34f26; }
+.skill-icon-only.css:hover i { color: #1572b6; }
+.skill-icon-only.tailwind:hover i { color: #38bdf8; }
 
 /* Dark Mode Professional Adjustments */
 [data-theme="dark"] .skill-icon-only {
