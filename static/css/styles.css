@@ -621,81 +621,84 @@ body {
     width: 20px;
 }
 
-/* New Icon-Based Skills Styling */
+/* Skills Section (Restored Ranking Style) */
 #skills {
     background-color: var(--bg-light);
     transition: background-color 0.3s ease;
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
-}
-
-.skill-icon-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 2rem 1rem;
+.skill-category {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
     border-radius: 20px;
-    text-align: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
     box-shadow: var(--shadow);
+    height: 100%;
+    transition: all 0.3s ease;
 }
 
-.skill-icon-card:hover {
-    transform: translateY(-12px);
-    border-color: var(--primary-color);
-    box-shadow: 0 15px 30px rgba(0, 102, 204, 0.15);
+.skill-category h4 {
+    color: var(--text-primary) !important;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.skill-icon-card i {
-    font-size: 3rem;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
+.skill-category h4 i {
+    font-size: 1.5rem;
 }
 
-.skill-icon-card:hover i {
-    transform: scale(1.15);
+.skill-item {
+    margin-bottom: 1.8rem;
 }
 
-.skill-icon-card span {
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.skill-name {
     font-weight: 600;
-    font-size: 0.95rem;
     color: var(--text-primary);
-    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
 }
 
-/* Custom colors for specific icons on hover */
-.skill-icon-card.java:hover i { color: #f89820; }
-.skill-icon-card.html:hover i { color: #e34f26; }
-.skill-icon-card.css:hover i { color: #1572b6; }
-.skill-icon-card.js:hover i { color: #f7df1e; }
-.skill-icon-card.ts:hover i { color: #3178c6; }
-.skill-icon-card.python:hover i { color: #3776ab; }
-.skill-icon-card.sql:hover i { color: #f29111; }
-.skill-icon-card.oracle:hover i { color: #f80000; }
-.skill-icon-card.magento:hover i { color: #ff671f; }
-.skill-icon-card.linux:hover i { color: #fcc624; }
-.skill-icon-card.windows:hover i { color: #0078d6; }
-.skill-icon-card.apple:hover i { color: #a2aaad; }
-.skill-icon-card.database:hover i { color: #336791; }
-.skill-icon-card.dev:hover i { color: #4caf50; }
-
-[data-theme="dark"] .skill-icon-card {
-    background: #161b22;
-    border-color: #30363d;
+.skill-name i {
+    font-size: 1rem; /* Ícones pequenos como solicitado */
+    width: 20px;
+    text-align: center;
+    color: var(--primary-color);
 }
 
-[data-theme="dark"] #skills {
-    background-color: var(--bg-light) !important;
+.skill-level {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
 }
+
+.skill-bar {
+    height: 6px; /* Mais fino e elegante */
+    background-color: var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 10px;
+    transition: width 1.5s cubic-bezier(0.1, 0.42, 0.41, 1);
+}
+
+[data-theme="dark"] .skill-name { color: #f0f6fc !important; }
+[data-theme="dark"] .skill-category h4 { color: #ffffff !important; }
+[data-theme="dark"] .skill-bar { background-color: #21262d !important; }
 
 /* Projects Section */
 .project-card {
